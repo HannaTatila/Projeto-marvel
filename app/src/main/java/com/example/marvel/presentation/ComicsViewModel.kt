@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.marvel.domain.Comics
 
 class ComicsViewModel : ViewModel() {
+
     val comicsListLiveData: MutableLiveData<List<Comics>> = MutableLiveData()
 
     fun getComicsList() {
@@ -14,7 +15,7 @@ class ComicsViewModel : ViewModel() {
 
     private fun makeComicsListFake(): MutableList<Comics>{
         val comicsListFake: MutableList<Comics> = mutableListOf()
-        for (id in 0..5) {
+        for (id in 1..5) {
             val comic = Comics(
                 "Título $id",
                 "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_medium.jpg",
@@ -26,4 +27,5 @@ class ComicsViewModel : ViewModel() {
         }
         return comicsListFake
     }
+
 }

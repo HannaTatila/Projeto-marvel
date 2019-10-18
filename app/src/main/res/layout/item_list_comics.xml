@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/activityComicsThumbnail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
         tools:src="@drawable/ic_launcher_background"/>
 
     <TextView
@@ -17,6 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:layout_gravity="center"
         tools:text="Título maneiro"/>
 
 </LinearLayout>

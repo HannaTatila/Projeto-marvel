@@ -17,7 +17,7 @@ class ComicsViewModel : ViewModel() {
         for (id in 0..5) {
             val comic = Comics(
                 "Título $id",
-                "http://i.annihil.us/u/prod/marvel/i/mg/c/80/4bc5fe7a308d7/portrait_medium.jpg",
+                "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_medium.jpg",
                 "price $id",
                 "creator $id",
                 "characters $id"

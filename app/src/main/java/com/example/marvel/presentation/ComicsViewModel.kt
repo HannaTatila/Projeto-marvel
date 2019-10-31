@@ -2,9 +2,10 @@ package com.example.marvel.presentation
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.airbnb.epoxy.EpoxyController
 import com.example.marvel.domain.Comics
 
-class ComicsViewModel : ViewModel() {
+class ComicsViewModel: ViewModel() {
 
     val comicsListLiveData: MutableLiveData<List<Comics>> = MutableLiveData()
 
@@ -27,5 +28,4 @@ class ComicsViewModel : ViewModel() {
         }
         return comicsListFake
     }
-
 }

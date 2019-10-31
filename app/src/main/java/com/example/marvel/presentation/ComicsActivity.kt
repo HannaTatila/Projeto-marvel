@@ -3,35 +3,48 @@ package com.example.marvel.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.marvel.R
+import com.example.marvel.presentation.epoxy.ComicsController
 import kotlinx.android.synthetic.main.activity_comics.*
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ComicsActivity : AppCompatActivity() {
 
     private val comicsViewModel: ComicsViewModel by viewModel()
+    private val comicsController: ComicsController by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comics)
 
+        setupComicsRecycler()
         setupComicsViewModel()
     }
 
-    private fun setupComicsViewModel() {
-        comicsObserver(comicsViewModel)
+    private fun setupComicsRecycler(){
+        val linearLayoutManager = LinearLayoutManager(this)
+        activityComicsList.apply {
+            layoutManager = linearLayoutManager
+            setHasFixedSize(true)
+            adapter = comicsController.adapter
+            addItemDecoration(DividerItemDecoration(this@ComicsActivity, linearLayoutManager.orientation))
+        }
+    }
+
+    private fun setupComicsViewModel(){
+        comicsObserver()
         comicsViewModel.getComicsList()
     }
 
-    private fun comicsObserver(comicsViewModel: ComicsViewModel) {
+    private fun comicsObserver() {
         comicsViewModel.comicsListLiveData.observe(this, Observer {
-            it?.let{comicsList ->
-                with(activityComicsList) {
-                    val comicsAdapter = ListComicsAdapter(comicsList)
-                    setHasFixedSize(true)
-                    adapter = comicsAdapter
-                }
+            it?.let{ comicsList ->
+                comicsController.setComicsData(comicsList)
             }
         })
     }
+
 }

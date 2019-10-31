@@ -1,5 +1,6 @@
 package com.example.marvel.di
 
+import com.example.marvel.presentation.epoxy.ComicsController
 import com.example.marvel.presentation.ComicsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
@@ -9,6 +10,7 @@ object ComicsModule {
 
     private val comicsModule = module {
         viewModel { ComicsViewModel() }
+        single { ComicsController() }
     }
 
     fun load() = loadKoinModules(listOf(comicsModule))

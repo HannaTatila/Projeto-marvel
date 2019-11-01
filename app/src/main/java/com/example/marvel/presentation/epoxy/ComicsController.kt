@@ -3,17 +3,16 @@ package com.example.marvel.presentation.epoxy
 import com.airbnb.epoxy.EpoxyController
 import com.example.marvel.domain.Comics
 
-class ComicsController: EpoxyController(){
+class ComicsController : EpoxyController() {
 
-    private var comicsItems : List<Comics> = listOf()
-
-    fun setComicsData(newComicsItemst: List<Comics>) {
-        comicsItems = newComicsItemst
-        requestModelBuild()
-    }
+    var comicsItems: List<Comics> = listOf()
+        set(value) {
+            field = value
+            requestModelBuild()
+        }
 
     override fun buildModels() {
-        comicsItems.forEach {comic ->
+        comicsItems.forEach { comic ->
             ComicsModel_()
                 .id(comic.thumbnail)
                 .thumbnail(comic.thumbnail)

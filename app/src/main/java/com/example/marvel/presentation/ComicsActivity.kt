@@ -8,13 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.marvel.R
 import com.example.marvel.presentation.epoxy.ComicsController
 import kotlinx.android.synthetic.main.activity_comics.*
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ComicsActivity : AppCompatActivity() {
 
     private val comicsViewModel: ComicsViewModel by viewModel()
-    private val comicsController: ComicsController by inject()
+    private val comicsController: ComicsController by lazy {
+        ComicsController()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,25 +25,29 @@ class ComicsActivity : AppCompatActivity() {
         setupComicsViewModel()
     }
 
-    private fun setupComicsRecycler(){
+    private fun setupComicsRecycler() {
         val linearLayoutManager = LinearLayoutManager(this)
         activityComicsList.apply {
             layoutManager = linearLayoutManager
-            setHasFixedSize(true)
             adapter = comicsController.adapter
-            addItemDecoration(DividerItemDecoration(this@ComicsActivity, linearLayoutManager.orientation))
+            addItemDecoration(
+                DividerItemDecoration(
+                    this@ComicsActivity,
+                    linearLayoutManager.orientation
+                )
+            )
         }
     }
 
-    private fun setupComicsViewModel(){
-        comicsObserver()
+    private fun setupComicsViewModel() {
+        observeCcomics()
         comicsViewModel.getComicsList()
     }
 
-    private fun comicsObserver() {
+    private fun observeCcomics() {
         comicsViewModel.comicsListLiveData.observe(this, Observer {
-            it?.let{ comicsList ->
-                comicsController.setComicsData(comicsList)
+            it?.let { comicsList ->
+                comicsController.comicsItems = comicsList
             }
         })
     }

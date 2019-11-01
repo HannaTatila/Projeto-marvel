@@ -1,9 +1,9 @@
 package com.example.marvel.domain
 
 data class Comics(
-    var title: String = "",
-    var thumbnail: String = "",
-    var price: String = "",
-    var creator: String = "",
-    var characters: String = ""
+    val title: String = "",
+    val thumbnail: String = "",
+    val price: String = "",
+    val creator: String = "",
+    val characters: String = ""
 )

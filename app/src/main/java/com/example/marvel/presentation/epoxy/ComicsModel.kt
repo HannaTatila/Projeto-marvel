@@ -10,10 +10,10 @@ import kotlinx.android.synthetic.main.item_list_comics.view.*
 @EpoxyModelClass(layout = R.layout.item_list_comics)
 abstract class ComicsModel : EpoxyModelWithHolder<DefaultEpoxyHolder>() {
 
-    @EpoxyAttribute (hash = true)
+    @EpoxyAttribute(hash = true)
     var thumbnail: String = ""
 
-    @EpoxyAttribute (hash = true)
+    @EpoxyAttribute(hash = true)
     var title: String = ""
 
     override fun bind(holder: DefaultEpoxyHolder) {

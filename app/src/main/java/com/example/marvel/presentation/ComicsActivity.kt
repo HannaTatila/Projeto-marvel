@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.marvel.R
 import com.example.marvel.presentation.epoxy.ComicsController
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_comics.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -40,16 +41,25 @@ class ComicsActivity : AppCompatActivity() {
     }
 
     private fun setupComicsViewModel() {
-        observeCcomics()
+        observeComics()
         comicsViewModel.getComicsList()
     }
 
-    private fun observeCcomics() {
-        comicsViewModel.comicsListLiveData.observe(this, Observer {
-            it?.let { comicsList ->
-                comicsController.comicsItems = comicsList
+    private fun observeComics() {
+        comicsViewModel.comicsViewState.observe(this, Observer { comicsListViewState ->
+            comicsController.comicsItems = comicsListViewState.comicsList
+        })
+
+        comicsViewModel.comicsAction.observe(this, Observer { action ->
+            when(action){
+                is ComicsAction.ShowSnackBar -> showSnackBar(action.message)
             }
         })
     }
+
+    private fun showSnackBar(message: String){
+        Snackbar.make(activityComicsList, message, Snackbar.LENGTH_SHORT).show()
+    }
+
 
 }

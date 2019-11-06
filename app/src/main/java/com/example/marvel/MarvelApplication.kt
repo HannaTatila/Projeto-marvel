@@ -5,7 +5,7 @@ import com.example.marvel.di.ComicsModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-open class AppDelegate : Application() {
+open class MarvelApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

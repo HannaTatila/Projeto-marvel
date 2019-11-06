@@ -14,7 +14,7 @@ class ComicsController : EpoxyController() {
     override fun buildModels() {
         comicsItems.forEach { comic ->
             ComicsModel_()
-                .id(comic.thumbnail)
+                .id(comic.title)
                 .thumbnail(comic.thumbnail)
                 .title(comic.title)
                 .addTo(this)

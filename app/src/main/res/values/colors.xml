@@ -3,4 +3,15 @@
     <color name="colorPrimary">#BE170A</color>
     <color name="colorPrimaryDark">#96180F</color>
     <color name="colorAccent">#F7CD53</color>
+
+    <color name="colorSearchView">#DDDCDC</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorTextBlack">#000000</color>
+    <color name="colorTextGray">#6E7174</color>
+
+    <color name="colorIconItemMenuChecked">#FFFFFF</color>
+    <color name="colorIconItemMenuUnchecked">#E7B4C4</color>
+
+    <color name="colorTextItemMenuChecked">#FFFFFF</color>
+    <color name="colorTextItemMenuUnchecked">#E7B4C4</color>
 </resources>

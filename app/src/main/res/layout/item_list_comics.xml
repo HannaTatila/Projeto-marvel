@@ -1,23 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="250dp"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/activityComicsThumbnail"
-        android:layout_width="120dp"
-        android:layout_height="160dp"
-        tools:src="@drawable/ic_launcher_background"/>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/activityComicsThumbnail"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_favorite_white_24dp" />
+
+    </FrameLayout>
 
     <TextView
         android:id="@+id/activityComicsTitleComic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_gravity="center"
-        tools:text="Título maneiro"/>
+        android:layout_marginVertical="170dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:lines="2"
+        android:maxWidth="120dp"
+        tools:text="Título maneiro" />
 
-</LinearLayout>
+</RelativeLayout>

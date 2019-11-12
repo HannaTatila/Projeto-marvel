@@ -2,4 +2,6 @@
     <string name="app_name">marvel</string>
 
     <string name="comics_network_error_message">Ocorreu um erro ao carregar a lista de quadrinhos.</string>
+    <string name="titulo_marvel">Marvel</string>
+    <string name="subtitulo_comics">Comics</string>
 </resources>

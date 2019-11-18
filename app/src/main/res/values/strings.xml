@@ -4,4 +4,9 @@
     <string name="comics_network_error_message">Ocorreu um erro ao carregar a lista de quadrinhos.</string>
     <string name="titulo_marvel">Marvel</string>
     <string name="subtitulo_comics">Comics</string>
+    <string name="tab_all_comics">All Comics</string>
+    <string name="tab_favorites">Favorites</string>
+    <string name="titulo_app_toolbar">Marvel Comics</string>
+    <string name="cd_image_of_the_comic">Image of the comic</string>
+    <string name="cd_heart_image_to_mark_as_favorito">Heart image to mark as favorito</string>
 </resources>

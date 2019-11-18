@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="250dp"
+    android:layout_height="240dp"
     android:padding="16dp">
 
     <FrameLayout
@@ -13,14 +14,16 @@
             android:id="@+id/activityComicsThumbnail"
             android:layout_width="120dp"
             android:layout_height="160dp"
-            tools:src="@drawable/ic_launcher_background" />
+            tools:src="@drawable/ic_launcher_background"
+            android:contentDescription="Image of the comic" />
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:layout_margin="8dp"
-            android:src="@drawable/ic_favorite_white_24dp" />
+            android:src="@drawable/ic_favorite_pink_24dp"
+            android:contentDescription="Image of the heart for " />
 
     </FrameLayout>
 
@@ -28,12 +31,12 @@
         android:id="@+id/activityComicsTitleComic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginVertical="170dp"
-        android:layout_marginTop="5dp"
         android:gravity="center"
+        android:ellipsize="end"
         android:lines="2"
         android:maxWidth="120dp"
+        app:autoSizeTextType="uniform"
         tools:text="Título maneiro" />
 
 </RelativeLayout>

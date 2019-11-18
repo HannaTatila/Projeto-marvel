@@ -2,6 +2,7 @@ package com.example.marvel.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
@@ -9,15 +10,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.marvel.R
 import com.example.marvel.presentation.epoxy.ComicsController
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_comics.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.content_home.*
+import java.time.Duration
 
 class ComicsActivity : AppCompatActivity() {
 
     private val comicsViewModel: ComicsViewModel by viewModel()
     private val comicsController: ComicsController by lazy { ComicsController() }
+
+    companion object {
+        private const val COUNT_COLUMNS_GRID_LAYOUT = 2
+    }
 
     private val onNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -49,7 +54,7 @@ class ComicsActivity : AppCompatActivity() {
     private fun setupComicsRecycler() {
         val linearLayoutManager = LinearLayoutManager(this)
         activityComicsList.apply {
-            layoutManager = GridLayoutManager(this@ComicsActivity, 2)
+            layoutManager = GridLayoutManager(this@ComicsActivity, COUNT_COLUMNS_GRID_LAYOUT)
             adapter = comicsController.adapter
             addItemDecoration(
                 DividerItemDecoration(
@@ -80,6 +85,5 @@ class ComicsActivity : AppCompatActivity() {
     private fun showSnackBar(message: String) {
         Snackbar.make(activityComicsList, message, Snackbar.LENGTH_SHORT).show()
     }
-
 
 }

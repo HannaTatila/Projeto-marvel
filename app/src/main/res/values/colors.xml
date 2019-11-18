@@ -9,9 +9,11 @@
     <color name="colorTextBlack">#000000</color>
     <color name="colorTextGray">#6E7174</color>
 
-    <color name="colorIconItemMenuChecked">#FFFFFF</color>
-    <color name="colorIconItemMenuUnchecked">#E7B4C4</color>
+    <color name="colorIconItemMenuChecked">#96180F</color>
+    <color name="colorIconItemMenuUnchecked">#92A198</color>
 
-    <color name="colorTextItemMenuChecked">#FFFFFF</color>
-    <color name="colorTextItemMenuUnchecked">#E7B4C4</color>
+    <color name="colorTextItemMenuChecked">#96180F</color>
+    <color name="colorTextItemMenuUnchecked">#92A198</color>
+
+    <color name="colorBackgroundMenu">#F8F8F8</color>
 </resources>

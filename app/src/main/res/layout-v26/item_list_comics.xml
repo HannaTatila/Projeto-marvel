@@ -15,7 +15,7 @@
             android:layout_width="120dp"
             android:layout_height="160dp"
             tools:src="@drawable/ic_launcher_background"
-            android:contentDescription="Image of the comic" />
+            android:contentDescription="@string/cd_image_of_the_comic" />
 
         <ImageView
             android:layout_width="30dp"
@@ -23,7 +23,7 @@
             android:layout_gravity="end"
             android:layout_margin="8dp"
             android:src="@drawable/ic_favorite_pink_24dp"
-            android:contentDescription="Image of the heart for " />
+            android:contentDescription="@string/cd_heart_image_to_mark_as_favorito" />
 
     </FrameLayout>
 

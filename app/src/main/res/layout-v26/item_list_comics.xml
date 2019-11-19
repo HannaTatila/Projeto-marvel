@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="240dp"
+    android:padding="16dp">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/activityComicsThumbnail"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            tools:src="@drawable/ic_launcher_background"
+            android:contentDescription="@string/cd_image_of_the_comic" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_favorite_pink_24dp"
+            android:contentDescription="@string/cd_heart_image_to_mark_as_favorito" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/activityComicsTitleComic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="170dp"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:lines="2"
+        android:maxWidth="120dp"
+        app:autoSizeTextType="uniform"
+        tools:text="Título maneiro" />
+
+</RelativeLayout>

@@ -85,5 +85,5 @@ class ComicsActivity : AppCompatActivity() {
     private fun showSnackBar(message: String) {
         Snackbar.make(activityComicsList, message, Snackbar.LENGTH_SHORT).show()
     }
-
+  
 }

@@ -31,7 +31,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sv_comics"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         android:layout_margin="16dp"
         android:foregroundGravity="center"

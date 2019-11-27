@@ -24,13 +24,12 @@ class DetailsComicActivity : AppCompatActivity() {
 
             // salvar comic no banco
         }
-
     }
 
-    companion object{
+    companion object {
         private const val ARG_ID_COMIC = "arg_id_comic"
 
-        fun newInstance(context: Context, idComic: Int) : Intent{
+        fun newInstance(context: Context, idComic: Int): Intent {
             val bundle = Bundle()
             bundle.putInt(ARG_ID_COMIC, idComic)
             return Intent(context, DetailsComicActivity::class.java)

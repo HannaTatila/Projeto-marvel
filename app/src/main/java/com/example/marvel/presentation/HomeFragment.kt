@@ -15,8 +15,6 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.content_home.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-private const val COUNT_COLUMNS_GRID_LAYOUT = 2
-
 class HomeFragment : Fragment() {
 
     private val comicsViewModel: ComicsViewModel by viewModel()
@@ -81,6 +79,10 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         setupComicsViewModel()
+    }
+
+    companion object {
+        private const val COUNT_COLUMNS_GRID_LAYOUT = 2
     }
 
 }

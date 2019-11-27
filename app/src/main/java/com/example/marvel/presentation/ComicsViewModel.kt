@@ -40,7 +40,7 @@ class ComicsViewModel(
             .apply { compositeDisposable.add(this) }
     }
 
-    fun navigateToDetailsComicActivity(idComic: Int){
+    fun navigateToDetailsComicActivity(idComic: Int) {
         comicsActionSingleLive.postValue(ComicsAction.NavigateToDetailsComicActivity(idComic))
     }
 

@@ -11,24 +11,25 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/activityComicsThumbnail"
+            android:id="@+id/iv_thumbnail"
             android:layout_width="120dp"
             android:layout_height="160dp"
             tools:src="@drawable/ic_launcher_background"
             android:contentDescription="@string/cd_image_of_the_comic" />
 
         <ImageView
+            android:id="@+id/iv_favorite"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="end"
             android:layout_margin="8dp"
-            android:src="@drawable/ic_favorite_pink_24dp"
-            android:contentDescription="@string/cd_heart_image_to_mark_as_favorito" />
+            android:src="@drawable/ic_favorite_border_pink_24dp"
+            android:contentDescription="@string/cd_heart_image_to_favorites" />
 
     </FrameLayout>
 
     <TextView
-        android:id="@+id/activityComicsTitleComic"
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="170dp"

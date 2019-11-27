@@ -41,6 +41,7 @@ class ComicRepositoryTest: KoinTest {
 
         val comicsList = listOf(
             Comics(
+                183,
                 "Startling Stories: The Incorrigible Hulk (2004) #1",
                 "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg",
                 "For Doctor Bruce Banner life is anything but normal. But what happens when two women get between him and his alter ego, the Incorrigible Hulk? Hulk confused! \r\nIndy superstar Peter Bagge (THE MEGALOMANIACAL SPIDER-MAN) takes a satirical jab at the Hulk mythos with a tale of dames, debauchery and destruction.\r\n32 PGS./MARVEL PSR...$2.99"

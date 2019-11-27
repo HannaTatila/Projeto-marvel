@@ -2,7 +2,6 @@ package com.example.marvel.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
@@ -13,7 +12,6 @@ import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.content_home.*
-import java.time.Duration
 
 class ComicsActivity : AppCompatActivity() {
 
@@ -48,14 +46,13 @@ class ComicsActivity : AppCompatActivity() {
         bottomNavigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
         setupComicsRecycler()
-        setupComicsViewModel()
     }
 
     private fun setupComicsRecycler() {
         val linearLayoutManager = LinearLayoutManager(this)
-        activityComicsList.apply {
+        erv_comicsList.apply {
             layoutManager = GridLayoutManager(this@ComicsActivity, COUNT_COLUMNS_GRID_LAYOUT)
-            adapter = comicsController.adapter
+            setControllerAndBuildModels(comicsController)
             addItemDecoration(
                 DividerItemDecoration(
                     this@ComicsActivity,
@@ -63,6 +60,11 @@ class ComicsActivity : AppCompatActivity() {
                 )
             )
         }
+
+        comicsController.setOnClickComic { idComic ->
+            comicsViewModel.navigateToDetailsComicActivity(idComic)
+        }
+
     }
 
     private fun setupComicsViewModel() {
@@ -78,12 +80,23 @@ class ComicsActivity : AppCompatActivity() {
         comicsViewModel.comicsAction.observe(this, Observer { action ->
             when (action) {
                 is ComicsAction.ShowSnackBar -> showSnackBar(action.message)
+                is ComicsAction.NavigateToDetailsComicActivity -> startDetailsComic(action.idComic)
             }
         })
     }
 
     private fun showSnackBar(message: String) {
-        Snackbar.make(activityComicsList, message, Snackbar.LENGTH_SHORT).show()
+        Snackbar.make(erv_comicsList, message, Snackbar.LENGTH_SHORT).show()
     }
-  
+
+    private fun startDetailsComic(idComic: Int) {
+        val intent = DetailsComicActivity.newInstance(this, idComic)
+        startActivity(intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setupComicsViewModel()
+    }
+
 }

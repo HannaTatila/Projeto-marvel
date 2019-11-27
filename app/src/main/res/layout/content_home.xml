@@ -25,8 +25,8 @@
         android:iconifiedByDefault="false"
         android:lines="1"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/activityComicsList"
+    <com.airbnb.epoxy.EpoxyRecyclerView
+        android:id="@+id/erv_comicsList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"

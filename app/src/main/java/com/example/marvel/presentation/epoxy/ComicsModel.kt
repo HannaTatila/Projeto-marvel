@@ -18,12 +18,20 @@ abstract class ComicsModel : EpoxyModelWithHolder<DefaultEpoxyHolder>() {
     @EpoxyAttribute(hash = true)
     var title: String = ""
 
+    @EpoxyAttribute(hash = false)
+    var callbackComic: (() -> Unit)? = null
+
     override fun bind(holder: DefaultEpoxyHolder) {
         Glide.with(holder.itemView.context)
             .load(thumbnail)
-            .apply(RequestOptions.bitmapTransform(RoundedCorners(35))) //TODO: tirar hardcode
-            .into(holder.itemView.activityComicsThumbnail)
-        holder.itemView.activityComicsTitleComic.text = title
+            .apply(RequestOptions.bitmapTransform(RoundedCorners(VALUE_ROUNDER_CORNERS)))
+            .into(holder.itemView.iv_thumbnail)
+        holder.itemView.tv_title.text = title
+        holder.itemView.setOnClickListener { callbackComic?.invoke() }
+    }
+
+    companion object {
+        private const val VALUE_ROUNDER_CORNERS = 35
     }
 
 }

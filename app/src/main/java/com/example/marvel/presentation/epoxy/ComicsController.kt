@@ -5,6 +5,8 @@ import com.example.marvel.domain.Comics
 
 class ComicsController : EpoxyController() {
 
+    private var callbackComic: ((Int) -> Unit)? = null
+
     var comicsItems: List<Comics> = listOf()
         set(value) {
             field = value
@@ -14,10 +16,16 @@ class ComicsController : EpoxyController() {
     override fun buildModels() {
         comicsItems.forEach { comic ->
             ComicsModel_()
-                .id(comic.title)
+                .id(comic.id)
                 .thumbnail(comic.thumbnail)
                 .title(comic.title)
+                .callbackComic { callbackComic?.invoke(comic.id) }
                 .addTo(this)
         }
     }
+
+    fun setOnClickComic(callback: (idComic: Int) -> Unit) {
+        this.callbackComic = callback
+    }
+
 }

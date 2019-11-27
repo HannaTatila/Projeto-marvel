@@ -28,11 +28,13 @@ class ComicsViewModelTest : KoinTest {
         // Given
         val comicsList = listOf(
             Comics(
+                183,
                 "Startling Stories: The Incorrigible Hulk (2004) #1",
                 "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg",
                 "When Hank Pym - a.k.a. Ant-Man - is tapped by U.S. Intelligence to infiltrate an international spy ring that has been siphoning secrets out of Washington"
             ),
             Comics(
+                183,
                 "Startling Stories: The Incorrigible Hulk (2004) #2",
                 "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg",
                 "2 When Hank Pym - a.k.a. Ant-Man - is tapped by U.S. Intelligence to infiltrate an international spy ring that has been siphoning secrets out of Washington"

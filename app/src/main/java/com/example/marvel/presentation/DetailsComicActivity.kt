@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.marvel.R
-import kotlinx.android.synthetic.main.activity_details_comic.*
+import kotlinx.android.synthetic.main.activity_details_comic.fab
 
 class DetailsComicActivity : AppCompatActivity() {
 
@@ -22,7 +22,7 @@ class DetailsComicActivity : AppCompatActivity() {
             Snackbar.make(view, "Favorite comic!", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
 
-            // salvar comic no banco
+            // TODO: salvar comic no banco
         }
     }
 

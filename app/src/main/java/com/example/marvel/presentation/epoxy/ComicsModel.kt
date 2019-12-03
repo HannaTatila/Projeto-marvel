@@ -19,7 +19,7 @@ abstract class ComicsModel : EpoxyModelWithHolder<DefaultEpoxyHolder>() {
     var title: String = ""
 
     @EpoxyAttribute(hash = false)
-    var callbackComic: (() -> Unit)? = null
+    var onClickListener: (() -> Unit)? = null
 
     override fun bind(holder: DefaultEpoxyHolder) {
         Glide.with(holder.itemView.context)
@@ -27,7 +27,7 @@ abstract class ComicsModel : EpoxyModelWithHolder<DefaultEpoxyHolder>() {
             .apply(RequestOptions.bitmapTransform(RoundedCorners(VALUE_ROUNDER_CORNERS)))
             .into(holder.itemView.iv_thumbnail)
         holder.itemView.tv_title.text = title
-        holder.itemView.setOnClickListener { callbackComic?.invoke() }
+        holder.itemView.setOnClickListener { onClickListener?.invoke() }
     }
 
     companion object {

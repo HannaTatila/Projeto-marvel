@@ -5,7 +5,7 @@ import com.example.marvel.domain.Comics
 
 class ComicsController : EpoxyController() {
 
-    private var callbackComic: ((Int) -> Unit)? = null
+    var onClickListener: ((Int) -> Unit)? = null
 
     var comicsItems: List<Comics> = listOf()
         set(value) {
@@ -19,13 +19,13 @@ class ComicsController : EpoxyController() {
                 .id(comic.id)
                 .thumbnail(comic.thumbnail)
                 .title(comic.title)
-                .callbackComic { callbackComic?.invoke(comic.id) }
+                .onClickListener { onClickListener?.invoke(comic.id) }
                 .addTo(this)
         }
     }
 
-    fun setOnClickComic(callback: (idComic: Int) -> Unit) {
-        this.callbackComic = callback
+    fun setOnClickListenerComic(click: (idComic: Int) -> Unit) {
+        this.onClickListener = click
     }
 
 }

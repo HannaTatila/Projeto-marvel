@@ -21,6 +21,10 @@ class ComicsViewModel(
 
     private val compositeDisposable = CompositeDisposable()
 
+    init {
+        getComicsList()
+    }
+
     fun getComicsList() {
         comicsUseCase()
             .subscribeOn(Schedulers.io())

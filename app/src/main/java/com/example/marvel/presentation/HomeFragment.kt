@@ -44,17 +44,12 @@ class HomeFragment : Fragment() {
             )
         }
 
-        comicsController.setOnClickComic { idComic ->
+        comicsController.setOnClickListenerComic { idComic ->
             comicsViewModel.navigateToDetailsComicActivity(idComic)
         }
     }
 
     private fun setupComicsViewModel() {
-        observeComics()
-        comicsViewModel.getComicsList()
-    }
-
-    private fun observeComics() {
         comicsViewModel.comicsViewState.observe(this, Observer { comicsListViewState ->
             comicsController.comicsItems = comicsListViewState.comicsList
         })

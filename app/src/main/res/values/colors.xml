@@ -16,4 +16,6 @@
     <color name="colorTextItemMenuUnchecked">#92A198</color>
 
     <color name="colorBackgroundMenu">#F8F8F8</color>
+
+    <color name="colorBackgroundDividerLine">#C5C2C2</color>
 </resources>

@@ -20,6 +20,7 @@ class ComicRepositoryImpl(private val comicRemoteDataSource: ComicRemoteDataSour
                         )
 
                         Comics(
+                            comicResponse.id,
                             comicResponse.title,
                             thumbnail,
                             comicResponse.description

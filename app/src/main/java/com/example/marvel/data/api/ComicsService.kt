@@ -14,6 +14,6 @@ interface ComicsService {
 
 
     @GET("/v1/public/comics/{id}?ts=1&apikey=c41a380d16444cae4dfa217d408336e1&hash=78abe8add9743df8eff80d42a5672cdf")
-    fun getComic(@Query("comicId") id: Int): Single<ComicResponse>
+    fun getComic(@Query("id") id: Int): Single<ComicResponse>
 
 }

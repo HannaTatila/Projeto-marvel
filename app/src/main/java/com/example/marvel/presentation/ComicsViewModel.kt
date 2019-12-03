@@ -21,6 +21,10 @@ class ComicsViewModel(
 
     private val compositeDisposable = CompositeDisposable()
 
+    init {
+        getComicsList()
+    }
+
     fun getComicsList() {
         comicsUseCase()
             .subscribeOn(Schedulers.io())
@@ -38,6 +42,10 @@ class ComicsViewModel(
                 error.printStackTrace()
             })
             .apply { compositeDisposable.add(this) }
+    }
+
+    fun navigateToDetailsComicActivity(idComic: Int) {
+        comicsActionSingleLive.postValue(ComicsAction.NavigateToDetailsComicActivity(idComic))
     }
 
     override fun onCleared() {
